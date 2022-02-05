@@ -1,0 +1,35 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+header {
+    
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    border-bottom: 2px solid black;
+    height: 10vh;
+
+    .link_access {
+        margin-right: 25px;
+    }
+}
+
+footer {
+    text-align: center;
+    margin: 15px;
+    border-top: 2px solid black;
+    padding-top: 20px;
+    height: 10vh;
+}
+
+main {
+    text-align: center;
+    height: 70vh;
+    
+}
