@@ -13,7 +13,6 @@ header {
     justify-content: space-between;
     margin: 15px;
     border-bottom: 2px solid black;
-    height: 10vh;
 
     .link_access {
         margin-right: 25px;
@@ -25,11 +24,33 @@ footer {
     margin: 15px;
     border-top: 2px solid black;
     padding-top: 20px;
-    height: 10vh;
 }
 
 main {
     text-align: center;
-    height: 70vh;
-    
+
+    ul {
+
+        margin: 0;
+        padding: 0;
+
+        li {
+
+            margin: 10px 0;
+            list-style: none;
+            text-decoration: none;
+
+            a {
+                color: black;
+            }
+
+        }
+
+    }
+  
+ 
+    hr {
+
+        border: 1px solid black;
+    }
 }

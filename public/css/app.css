@@ -10967,7 +10967,6 @@ header {
   justify-content: space-between;
   margin: 15px;
   border-bottom: 2px solid black;
-  height: 10vh;
 }
 
 header .link_access {
@@ -10979,11 +10978,28 @@ footer {
   margin: 15px;
   border-top: 2px solid black;
   padding-top: 20px;
-  height: 10vh;
 }
 
 main {
   text-align: center;
-  height: 70vh;
+}
+
+main ul {
+  margin: 0;
+  padding: 0;
+}
+
+main ul li {
+  margin: 10px 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+main ul li a {
+  color: black;
+}
+
+main hr {
+  border: 1px solid black;
 }
 
