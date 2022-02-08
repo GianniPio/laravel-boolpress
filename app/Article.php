@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Category;
 
+use App\Tag;
+
 class Article extends Model
 {
     protected $fillable = [
@@ -19,5 +21,10 @@ class Article extends Model
     public function category() {
 
         return $this -> belongsTo(Category::class);
+    }
+
+    public function tags() {
+
+        return $this -> belongsToMany(Tag::class);
     }
 }

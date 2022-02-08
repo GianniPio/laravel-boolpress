@@ -19,7 +19,7 @@
      @method("POST")
      @csrf
 
-    <label for="price">Number of pages:</label>
+    <label for="price">Nuovo prezzo:</label>
     <input type="number" name="price" placeholder="add price" value="{{$article -> price}}">
     <input type="submit" value="Modifica">
 

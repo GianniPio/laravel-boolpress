@@ -9,14 +9,20 @@
             <th>Prezzo</th>
             <th>Date di pubblicazione</th>
             <th>Categoria</th>
+            <th>Tag</th>
             <th>Descrizione</th>
         </tr>
 
         <tr>
             <td>{{$article -> title}}</td>
             <td>{{$article -> price}}€</td>
-            <td>{{$article -> created_at -> format('d m Y')}}</td>
+            <td>{{$article -> created_at -> format('d/m/Y')}}</td>
             <td>{{$article -> category -> name}}</td>
+            <td>
+                @foreach ($article -> tags as $tag)
+                    {{$tag -> name}}<br>
+                @endforeach
+            </td>
             <td>{{$article -> description}}</td>
         </tr>
     </table>
