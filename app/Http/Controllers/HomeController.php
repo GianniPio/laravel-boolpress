@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Article;
+
 class HomeController extends Controller
 {
     
@@ -34,7 +36,6 @@ class HomeController extends Controller
 
       $data = $request -> validate([
           'title' => 'required|string|max:60',
-          'dateOfRelease' => 'required|date',
           'price' => 'required|numeric|min:2|max:150',
           'description' => 'required|string|max:255',
       ]); 

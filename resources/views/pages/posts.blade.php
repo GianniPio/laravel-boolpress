@@ -7,7 +7,9 @@
 
     <ul>
         @foreach ($articles as $article)
-            <li><a href="{{route('article', $article -> id)}}">{{$article -> title}}</a> - <a href="{{route('delete', $article -> id)}}"><i class="fas fa-trash"></i></a></li>
+            <li><a href="{{route('article', $article -> id)}}">{{$article -> title}}</a> - 
+                <a href="{{route('delete', $article -> id)}}"><i class="fas fa-trash"></i></a>
+            </li>
          @endforeach
     </ul>
     

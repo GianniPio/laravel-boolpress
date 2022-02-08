@@ -21,8 +21,6 @@
 
    <label for="title">Title:</label>
    <input type="text" name="title" placeholder="add title"><br>
-   <label for="dateOfRelease">Date of released:</label>
-   <input type="date" name="dateOfRelease"><br>
    <label for="price">Prezzo</label>
    <input type="number" name="price" placeholder="add price"><br>
    <textarea name="description"></textarea><br>
