@@ -13,7 +13,13 @@ class AddForeignKey extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('articles', function (Blueprint $table) {
+
+            $table-> foreign('category_id', 'post_category')
+                -> references('id')
+                -> on('categories');
+
+        });
     }
 
     /**
@@ -23,6 +29,10 @@ class AddForeignKey extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('articles', function (Blueprint $table) {
+
+            $table-> dropForeign('post_category');
+
+        });
     }
 }

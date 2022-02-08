@@ -18,8 +18,10 @@ class CreateArticlesTable extends Migration
 
             $table->string('title', 60);
             $table->date('dateOfRelease');
-            $table->integer('price');
-            $table->text('description');
+            $table->integer('price') -> unsigned();
+            $table->text('description') ->nullable();
+
+            $table-> bigInteger('category_id') -> unsigned();
 
             $table->timestamps();
         });
