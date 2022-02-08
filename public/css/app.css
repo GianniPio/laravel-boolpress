@@ -11010,5 +11010,6 @@ main table {
 main table th,
 main table td {
   border: 1px solid black;
+  padding: 5px;
 }
 

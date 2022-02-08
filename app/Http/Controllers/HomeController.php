@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Article;
 
+use App\Category;
+
 class HomeController extends Controller
 {
     
@@ -16,7 +18,8 @@ class HomeController extends Controller
 
     public function posts() {
 
-        $articles = Article::all();
+        $articles = Article::orderBy('created_at', 'desc') -> get();
+        
         
         return view('pages.posts', compact('articles'));
     }
@@ -30,7 +33,9 @@ class HomeController extends Controller
 
     public function create() {
 
-        return view('pages.create');
+        $categories = Category::all();
+
+        return view('pages.create', compact('categories'));
     }
     public function store(Request $request) {
 
@@ -38,10 +43,14 @@ class HomeController extends Controller
           'title' => 'required|string|max:60',
           'price' => 'required|numeric|min:2|max:150',
           'description' => 'required|string|max:255',
-      ]); 
+        //   'category_id' => 'required|integer',
+        ]); 
 
-      $article = Article::create($data);
+      $article = Article::make($data);
+      $category = Category::findOrFail($request -> get('category'));
 
+      $article -> category() -> associate($category);
+      $article -> save();
     
       return redirect() -> route('article', $article -> id); 
     }

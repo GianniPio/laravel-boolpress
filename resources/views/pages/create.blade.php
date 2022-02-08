@@ -19,11 +19,17 @@
     @method("POST")
     @csrf
 
-   <label for="title">Title:</label>
+   <label for="title">Title:</label><br>
    <input type="text" name="title" placeholder="add title"><br>
-   <label for="price">Prezzo</label>
-   <input type="number" name="price" placeholder="add price"><br>
+   <label for="price">Prezzo</label><br>
+   <input type="number" name="price" placeholder="add price"><br><br>
    <textarea name="description"></textarea><br>
+   <label for="category">Categoria</label><br>
+   <select name="category">
+       @foreach ($categories as $category)
+           <option value="{{$category -> id}}">{{$category -> name}}</option>
+       @endforeach
+   </select><br>
    <input type="submit" value="Create">
 
 </form>
