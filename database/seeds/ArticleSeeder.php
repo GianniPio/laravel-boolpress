@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\Article;
+use App\Category;
 
 class ArticleSeeder extends Seeder
 {
@@ -13,6 +14,15 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        factory(Article::class, 10) ->create();
+        factory(Article::class, 50) ->make() -> each(function($article) {
+
+
+            $category = Category::inRandomOrder() -> limit(1) -> first();
+
+            $article -> Category() ->associate($category);
+
+            $article -> save();
+
+        });
     }
 }

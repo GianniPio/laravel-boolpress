@@ -11003,3 +11003,12 @@ main hr {
   border: 1px solid black;
 }
 
+main table {
+  margin: 0 auto;
+}
+
+main table th,
+main table td {
+  border: 1px solid black;
+}
+

@@ -17,7 +17,6 @@ class CreateArticlesTable extends Migration
             $table->id();
 
             $table->string('title', 60);
-            $table->date('dateOfRelease');
             $table->integer('price') -> unsigned();
             $table->text('description') ->nullable();
 
