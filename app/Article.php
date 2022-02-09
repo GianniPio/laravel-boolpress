@@ -15,6 +15,7 @@ class Article extends Model
         'title',
         'price',
         'description',
+        'author',
         'category_id',
     ];
 

@@ -11,6 +11,7 @@
             <th>Categoria</th>
             <th>Tag</th>
             <th>Descrizione</th>
+            <th>Autore</th>
         </tr>
 
         <tr>
@@ -24,6 +25,7 @@
                 @endforeach
             </td>
             <td>{{$article -> description}}</td>
+            <td>{{$article -> author}}</td>
         </tr>
     </table>
 

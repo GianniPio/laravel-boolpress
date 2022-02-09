@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Article;
 use App\Category;
 use App\Tag;
+
+
 
 class HomeController extends Controller
 {
@@ -44,7 +48,10 @@ class HomeController extends Controller
           'title' => 'required|string|max:60',
           'price' => 'required|numeric|min:2|max:150',
           'description' => 'required|string|max:255',
-        ]); 
+        ]);
+
+      $user = Auth::user();
+      $data['author'] = $user -> name;
 
       $article = Article::make($data);
       $category = Category::findOrFail($request -> get('category'));
@@ -62,6 +69,8 @@ class HomeController extends Controller
 
     public function delete($id) {
         $article = Article::findOrFail($id);
+        $article -> tags() -> sync([]);
+        $article -> save();
 
         $article -> delete();
 

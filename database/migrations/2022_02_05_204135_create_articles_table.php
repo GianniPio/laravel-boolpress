@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('title', 60);
             $table->integer('price') -> unsigned();
             $table->text('description') ->nullable();
+            $table->string('author')->notnullable();
 
             $table-> bigInteger('category_id') -> unsigned();
 
