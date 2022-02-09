@@ -29,5 +29,5 @@
         </tr>
     </table>
 
-    <a href="{{route('edit', $article -> id)}}">Fai un offerta</a>
+    <a href="{{route('edit', $article -> id)}}">Modifica</a>
 @endsection

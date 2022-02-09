@@ -80,18 +80,31 @@ class HomeController extends Controller
     public function edit($id) {
         
         $article = Article::findOrFail($id); 
+        $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('pages.edit', compact('article'));
+        return view('pages.edit', compact('article', 'categories', 'tags'));
     }
     public function update(Request $request, $id) {
 
         $data = $request -> validate([
-            'price' => 'required|numeric|max:150|min:2'
-        ]); 
+            'title' => 'required|string|max:60',
+            'price' => 'required|numeric|min:2|max:150',
+            'description' => 'required|string|max:255',
+        ]);
 
         $article = Article::findOrFail($id);
 
         $article -> update($data);
+
+        $category = Category::findOrFail($request -> get('category'));
+        $article -> category() -> associate($category);
+        $article -> save();
+
+        $tags = Tag::findOrFail($request -> get('tags'));
+        $article -> tags() -> sync($tags);
+
+        $article -> save();
 
         return redirect() -> route('article', $article -> id);
     }
